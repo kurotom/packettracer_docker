@@ -1,0 +1,17 @@
+services:
+  packettracer:
+    image: pt9:1.0
+    ports:
+      - 5901:5901
+    volumes:
+      - ${SHARE_DIRECTORY}:/home/ubuntu/Desktop/packettracer
+      - ${SHARE_DIRECTORY}/packettracer:/home/ubuntu/.local/.packettracer
+      - ${SHARE_DIRECTORY}/pt:/home/ubuntu/pt
+    devices:
+      - /dev/fuse
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:uncofined
+    environment:
+      CURRENT_USER: "ubuntu"
