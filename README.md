@@ -26,13 +26,14 @@ The container uses Ubuntu latest (24.04), xfce graphical environment, and vnc fo
 
 5. In the project directory, you must create a file named ´.env´, which should only contain **´SHARE_DIRECTORY=/fullpath/to/share_directory´**.
 
-6. Run the docker command and wait for the process to finish:
+6. Run the docker commands and wait for the process to finish:
 
    ´´´bash
+   sudo docker build -t pt9:1.0 -f Dockerfile .
    sudo docker compose -f run.yml -p pt9 up -d
    ´´´
 
-   You can change *pt9* to whatever you want.
+   You can change *pt9*, *pt9:1.0* to whatever you want.
 
 7. Once it finishes without any problems, you can connect to the container using a VNC client with:
 
